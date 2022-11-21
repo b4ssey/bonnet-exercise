@@ -1,9 +1,9 @@
 function defaultArguments(func, params) {
   let extrctdArgs = func
     .toString()
-    .match(/\(([^)]*)\)/)[1]
-    .split(",")
-    .map((r) => r.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, "").trim());
+    .match(/\(([^)]*)\)/)[1] //get arguments
+    .split(",") //get each argument
+    .map((r) => r.replace(/\/\*[\s\S]*?\*\/|([^\\:]|^)\/\/.*$/gm, "").trim()); //remove comments & whitespaces
 
   let results;
 
